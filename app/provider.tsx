@@ -7,9 +7,17 @@ import type { ReactNode } from 'react';
 
 const isDev = process.env.NODE_ENV === 'development';
 
+function getRpcEndpoint() {
+  if (isDev) return 'devnet';
+  if (typeof window !== 'undefined') {
+    return `${window.location.origin}/api/rpc`;
+  }
+  return process.env.NEXT_PUBLIC_APP_URL + '/api/rpc';
+}
+
 export function Providers({ children }: { children: ReactNode }) {
   const client = createDefaultClient({
-    endpoint: isDev ? 'devnet' : '/api/rpc',
+    endpoint: getRpcEndpoint(),
   });
   return (
     <SolanaProvider client={client}>
