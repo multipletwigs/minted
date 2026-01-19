@@ -9,7 +9,7 @@ const isDev = process.env.NODE_ENV === 'development';
 
 export function Providers({ children }: { children: ReactNode }) {
   const client = createDefaultClient({
-    cluster: isDev ? 'devnet' : 'mainnet',
+    endpoint: isDev ? 'devnet' : '/api/rpc',
   });
   return (
     <SolanaProvider client={client}>
