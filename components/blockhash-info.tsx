@@ -90,7 +90,7 @@ export function BlockhashInfo({ config }: BlockhashInfoProps) {
             </motion.div>
           )}
 
-          {error && (
+          {!!error && (
             <motion.div
               key="error"
               initial={{ opacity: 0 }}

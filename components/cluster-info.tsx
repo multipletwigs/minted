@@ -122,18 +122,6 @@ export function ClusterInfo({ config }: ClusterInfoProps) {
               description="31+ blocks passed"
               value="~12s"
             />
-
-            {status.status === "error" && status.error && (
-              <InfoRow
-                label="Error"
-                description="Connection failed"
-                value={
-                  <span className="text-red-300 text-[10px]">
-                    {String(status.error).slice(0, 20)}...
-                  </span>
-                }
-              />
-            )}
           </motion.div>
         </AnimatePresence>
       </div>
