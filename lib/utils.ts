@@ -17,7 +17,9 @@ export function getTokenStandard(owner: string | null): string {
   return owner ? truncateAddress(owner) : "Unknown";
 }
 
-export function getSolscanUrl(address: string, cluster: "devnet" | "mainnet" = "devnet"): string {
+const isDev = process.env.NODE_ENV === "development";
+
+export function getSolscanUrl(address: string): string {
   const base = `https://solscan.io/account/${address}`;
-  return cluster === "devnet" ? `${base}?cluster=devnet` : base;
+  return isDev ? `${base}?cluster=devnet` : base;
 }
