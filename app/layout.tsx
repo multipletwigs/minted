@@ -15,8 +15,22 @@ const departureMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Minted - Learn Solana",
+  title: "Politicoin",
   description: "Learn Solana concepts through political memecoins",
+  icons: {
+    icon: "/favicon.png",
+  },
+  openGraph: {
+    title: "Politicoin",
+    description: "Learn Solana concepts through political memecoins",
+    images: ["/ogimage.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Politicoin",
+    description: "Learn Solana concepts through political memecoins",
+    images: ["/ogimage.png"],
+  },
 };
 
 export default function RootLayout({
