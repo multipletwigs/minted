@@ -106,7 +106,7 @@ export function BalanceInfo({ address, config }: BalanceInfoProps) {
             </motion.div>
           )}
 
-          {error && (
+          {!!error && (
             <motion.div
               key="error"
               initial={{ opacity: 0 }}
